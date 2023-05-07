@@ -1,0 +1,52 @@
+Código para testar se as informações estão sendo enviadas em PHP
+->
+if (isset($_POST['submit'])) {
+  print_r($_POST['nome']);
+  print_r($_POST['sobrenome']);
+  print_r($_POST['email']);
+  print_r($_POST['celular']);
+  print_r($_POST['cep']);
+  print_r($_POST['rua']);
+  print_r($_POST['bairro']);
+  print_r($_POST['complemento']);
+  print_r($_POST['cidade']);
+  print_r($_POST['estado']);
+}
+........... 
+
+
+Código para testar o config - conexão com o banco de dados PHP
+->
+if($conexao->connect_errno){
+echo "Erro";
+} else{
+echo "Conexão efetuada!"; 
+}
+
+
+...........
+
+
+
+Código antigo do PHP para enviar dados ao banco. Antes dos prepare statements.
+->
+
+if (isset($_POST['submit'])) {
+include_once('config.php');
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$email = $_POST['email'];
+$celular = $_POST['celular'];
+$cep = $_POST['cep'];
+$rua = $_POST['rua'];
+$bairro = $_POST['bairro'];
+$complemento = $_POST['complemento'];
+$cidade = $_POST['cidade'];
+$estado = $_POST['estado'];
+$result = mysqli_query($conexao, "INSERT INTO users2(nome,sobrenome,email,celular,cep,rua,bairro,complemento,cidade,estado) 
+VALUES ('$nome','$sobrenome','$email','$celular','$cep','$rua','$bairro','$complemento','$cidade','$estado')");
+}
+
+
+..............
+
